@@ -2,6 +2,7 @@ use glfw::{Action, Context, Key};
 mod ch_1;
 mod ch_2;
 mod ch_3;
+mod ch_4;
 mod shader;
 
 fn main() {
@@ -15,6 +16,7 @@ fn main() {
         "ch_3_2" => ch_3::part2::main(),
         "ch_3_3" => ch_3::part3::main(),
         "ch_3_4" => ch_3::part4::main(),
+        "ch_4_1" => ch_4::part1::main(),
         _ => println!("Unimplemented"),
     }
 }

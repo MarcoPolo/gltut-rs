@@ -21,13 +21,106 @@ const SCR_HEIGHT: u32 = 600;
 // set up vertex data (and buffer(s)) and configure vertex attributes
 // ------------------------------------------------------------------
 // HINT: type annotation is crucial since default for float literals is f64
-const vertices: [f32; 24] = [
-    0.0, 0.5, 0.0, 1.0, // Comments to preserve formatting
-    0.5, -0.366, 0.0, 1.0, //
-    -0.5, -0.366, 0.0, 1.0, //
-    0.0, 0.5, 0.0, 1.0, // Comments to preserve formatting
-    0.5, -0.366, 0.0, 1.0, //
-    -0.5, -0.366, 0.0, 1.0, //
+#[rustfmt::skip]
+const vertices: [f32; 288] = [
+    0.25f32,  0.25f32, 0.75f32, 1.0f32,
+    0.25f32, -0.25f32, 0.75f32, 1.0f32,
+   -0.25f32,  0.25f32, 0.75f32, 1.0f32,
+
+    0.25f32, -0.25f32, 0.75f32, 1.0f32,
+   -0.25f32, -0.25f32, 0.75f32, 1.0f32,
+   -0.25f32,  0.25f32, 0.75f32, 1.0f32,
+
+    0.25f32,  0.25f32, -0.75f32, 1.0f32,
+   -0.25f32,  0.25f32, -0.75f32, 1.0f32,
+    0.25f32, -0.25f32, -0.75f32, 1.0f32,
+
+    0.25f32, -0.25f32, -0.75f32, 1.0f32,
+   -0.25f32,  0.25f32, -0.75f32, 1.0f32,
+   -0.25f32, -0.25f32, -0.75f32, 1.0f32,
+
+   -0.25f32,  0.25f32,  0.75f32, 1.0f32,
+   -0.25f32, -0.25f32,  0.75f32, 1.0f32,
+   -0.25f32, -0.25f32, -0.75f32, 1.0f32,
+
+   -0.25f32,  0.25f32,  0.75f32, 1.0f32,
+   -0.25f32, -0.25f32, -0.75f32, 1.0f32,
+   -0.25f32,  0.25f32, -0.75f32, 1.0f32,
+
+    0.25f32,  0.25f32,  0.75f32, 1.0f32,
+    0.25f32, -0.25f32, -0.75f32, 1.0f32,
+    0.25f32, -0.25f32,  0.75f32, 1.0f32,
+
+    0.25f32,  0.25f32,  0.75f32, 1.0f32,
+    0.25f32,  0.25f32, -0.75f32, 1.0f32,
+    0.25f32, -0.25f32, -0.75f32, 1.0f32,
+
+    0.25f32,  0.25f32, -0.75f32, 1.0f32,
+    0.25f32,  0.25f32,  0.75f32, 1.0f32,
+   -0.25f32,  0.25f32,  0.75f32, 1.0f32,
+
+    0.25f32,  0.25f32, -0.75f32, 1.0f32,
+   -0.25f32,  0.25f32,  0.75f32, 1.0f32,
+   -0.25f32,  0.25f32, -0.75f32, 1.0f32,
+
+    0.25f32, -0.25f32, -0.75f32, 1.0f32,
+   -0.25f32, -0.25f32,  0.75f32, 1.0f32,
+    0.25f32, -0.25f32,  0.75f32, 1.0f32,
+
+    0.25f32, -0.25f32, -0.75f32, 1.0f32,
+   -0.25f32, -0.25f32, -0.75f32, 1.0f32,
+   -0.25f32, -0.25f32,  0.75f32, 1.0f32,
+
+
+
+   // Colors
+   0.0f32, 0.0f32, 1.0f32, 1.0f32,
+   0.0f32, 0.0f32, 1.0f32, 1.0f32,
+   0.0f32, 0.0f32, 1.0f32, 1.0f32,
+
+   0.0f32, 0.0f32, 1.0f32, 1.0f32,
+   0.0f32, 0.0f32, 1.0f32, 1.0f32,
+   0.0f32, 0.0f32, 1.0f32, 1.0f32,
+
+   0.8f32, 0.8f32, 0.8f32, 1.0f32,
+   0.8f32, 0.8f32, 0.8f32, 1.0f32,
+   0.8f32, 0.8f32, 0.8f32, 1.0f32,
+
+   0.8f32, 0.8f32, 0.8f32, 1.0f32,
+   0.8f32, 0.8f32, 0.8f32, 1.0f32,
+   0.8f32, 0.8f32, 0.8f32, 1.0f32,
+
+   0.0f32, 1.0f32, 0.0f32, 1.0f32,
+   0.0f32, 1.0f32, 0.0f32, 1.0f32,
+   0.0f32, 1.0f32, 0.0f32, 1.0f32,
+
+   0.0f32, 1.0f32, 0.0f32, 1.0f32,
+   0.0f32, 1.0f32, 0.0f32, 1.0f32,
+   0.0f32, 1.0f32, 0.0f32, 1.0f32,
+
+   0.5f32, 0.5f32, 0.0f32, 1.0f32,
+   0.5f32, 0.5f32, 0.0f32, 1.0f32,
+   0.5f32, 0.5f32, 0.0f32, 1.0f32,
+
+   0.5f32, 0.5f32, 0.0f32, 1.0f32,
+   0.5f32, 0.5f32, 0.0f32, 1.0f32,
+   0.5f32, 0.5f32, 0.0f32, 1.0f32,
+
+   1.0f32, 0.0f32, 0.0f32, 1.0f32,
+   1.0f32, 0.0f32, 0.0f32, 1.0f32,
+   1.0f32, 0.0f32, 0.0f32, 1.0f32,
+
+   1.0f32, 0.0f32, 0.0f32, 1.0f32,
+   1.0f32, 0.0f32, 0.0f32, 1.0f32,
+   1.0f32, 0.0f32, 0.0f32, 1.0f32,
+
+   0.0f32, 1.0f32, 1.0f32, 1.0f32,
+   0.0f32, 1.0f32, 1.0f32, 1.0f32,
+   0.0f32, 1.0f32, 1.0f32, 1.0f32,
+
+   0.0f32, 1.0f32, 1.0f32, 1.0f32,
+   0.0f32, 1.0f32, 1.0f32, 1.0f32,
+   0.0f32, 1.0f32, 1.0f32, 1.0f32,
 ];
 
 #[allow(non_snake_case)]
@@ -62,25 +155,6 @@ fn compute_position_offsets(glfw: &glfw::Glfw) -> (f32, f32) {
         (curr_time_through_loop * scale).cos() as f32,
         (curr_time_through_loop * scale).sin() as f32,
     )
-}
-
-fn adjust_vertex_data(VBO: u32, (x_offset, y_offset): (f32, f32)) {
-    let mut nextVertices = Vec::from(vertices);
-    for i in (0..nextVertices.len()).step_by(4) {
-        nextVertices[i] += x_offset;
-        nextVertices[i + 1] += y_offset;
-    }
-
-    unsafe {
-        gl::BindBuffer(gl::ARRAY_BUFFER, VBO);
-        gl::BufferSubData(
-            gl::ARRAY_BUFFER,
-            0,
-            (vertices.len() * mem::size_of::<GLfloat>()) as GLsizeiptr,
-            &nextVertices[0] as *const f32 as *const c_void,
-        );
-        gl::BindBuffer(gl::ARRAY_BUFFER, 0);
-    }
 }
 
 #[allow(non_snake_case)]
@@ -142,9 +216,6 @@ pub fn main() {
 
     unsafe {
         gl::UseProgram(shaderProgram);
-        // Set loop duration once
-        shader.setFloat(&CString::new("loopDuration").unwrap(), 5.0);
-        shader.setFloat(&CString::new("fragLoopDuration").unwrap(), 10.0);
         gl::UseProgram(0);
     }
 
@@ -161,37 +232,33 @@ pub fn main() {
             gl::ClearColor(0.2, 0.3, 0.3, 1.0);
             gl::Clear(gl::COLOR_BUFFER_BIT);
 
-            // Adjust vertices
-            let offsets = compute_position_offsets(&glfw);
-            // println!("Offsets are {:?}", offsets);
-            // adjust_vertex_data(VBO, offsets);
-
             // // draw our first triangle
             gl::UseProgram(shaderProgram);
 
-            // shader.set2F(&CString::new("offset").unwrap(), offsets);
-            shader.setFloat(&CString::new("time").unwrap(), glfw.get_time() as f32);
+            shader.set2F(&CString::new("offset").unwrap(), (0.5, 0.25));
 
             gl::BindVertexArray(VAO); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
+
+            let color_data = vertices.len() * mem::size_of::<GLfloat> as usize;
 
             // Now we tell oepnGL what the format of the data is.
             gl::BindBuffer(gl::ARRAY_BUFFER, VBO);
             gl::EnableVertexAttribArray(0);
+            gl::EnableVertexAttribArray(1);
             //                      vertex attribute index,  How many of these values represent a single
             //                      piece of data, What the data type is, ?, spacing
             //                      between data, the byte offset from the start
             gl::VertexAttribPointer(0, 4, gl::FLOAT, gl::FALSE, 0, ptr::null());
+            gl::VertexAttribPointer(1, 4, gl::FLOAT, gl::FALSE, 0, color_data as *const c_void);
 
-            gl::DrawArrays(gl::TRIANGLES, 0, 3);
-
-            shader.setFloat(&CString::new("time").unwrap(), glfw.get_time() as f32 + 2.5);
-            gl::DrawArrays(gl::TRIANGLES, 3, 3);
+            gl::DrawArrays(gl::TRIANGLES, 0, 36);
 
             gl::DisableVertexAttribArray(0);
+            gl::DisableVertexAttribArray(1);
             gl::UseProgram(0);
+
             // note that this is allowed, the call to gl::VertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer object so afterwards we can safely unbind
             gl::BindBuffer(gl::ARRAY_BUFFER, 0);
-
             gl::BindVertexArray(0);
         }
 
