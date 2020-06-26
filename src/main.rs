@@ -12,6 +12,9 @@ fn main() {
         "ch_2" => ch_2::main_hello_color(),
         "ch_2_va" => ch_2::vertex_attributes::main(),
         "ch_3" => ch_3::part1::main(),
+        "ch_3_2" => ch_3::part2::main(),
+        "ch_3_3" => ch_3::part3::main(),
+        "ch_3_4" => ch_3::part4::main(),
         _ => println!("Unimplemented"),
     }
 }
