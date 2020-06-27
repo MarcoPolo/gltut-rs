@@ -17,6 +17,9 @@ fn main() {
         "ch_3_3" => ch_3::part3::main(),
         "ch_3_4" => ch_3::part4::main(),
         "ch_4_1" => ch_4::part1::main(),
+        "ch_4_2" => ch_4::part2::main(),
+        "ch_4_3" => ch_4::part3::main(),
+        "ch_4_4" => ch_4::part4::main(),
         _ => println!("Unimplemented"),
     }
 }
