@@ -3,6 +3,7 @@ mod ch_1;
 mod ch_2;
 mod ch_3;
 mod ch_4;
+mod section_ii;
 mod shader;
 
 fn main() {
@@ -20,6 +21,7 @@ fn main() {
         "ch_4_2" => ch_4::part2::main(),
         "ch_4_3" => ch_4::part3::main(),
         "ch_4_4" => ch_4::part4::main(),
+        "ch_5_1" => section_ii::ch_5_1::main(),
         _ => println!("Unimplemented"),
     }
 }
